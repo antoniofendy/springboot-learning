@@ -5,7 +5,8 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ComponentScan(basePackages = {
-        "com.fendy.exercise.service"
+        "com.fendy.exercise.service",
+        "com.fendy.exercise.repository"
 })
 public class ComponentConfiguration {
 }

@@ -1,5 +1,6 @@
 package com.fendy.exercise;
 
+import com.fendy.exercise.repository.ProductRepository;
 import com.fendy.exercise.service.ProductService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -22,6 +23,15 @@ public class ComponentTest {
         ProductService productService = applicationContext.getBean(ProductService.class);
         ProductService productService2 = applicationContext.getBean("productService", ProductService.class);
         Assertions.assertSame(productService, productService2);
+    }
+
+    @Test
+    void testComponentConstructorDependencyInjection() {
+        ProductService productService = applicationContext.getBean(ProductService.class);
+        Assertions.assertNotNull(productService.getProductRepository());
+
+        ProductRepository productRepository = applicationContext.getBean(ProductRepository.class);
+        Assertions.assertSame(productRepository, productService.getProductRepository());
     }
 
 }
