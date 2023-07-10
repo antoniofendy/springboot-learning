@@ -1,5 +1,6 @@
 package com.fendy.exercise;
 
+import com.fendy.exercise.data.Bar;
 import com.fendy.exercise.data.Foo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -29,4 +30,17 @@ public class ScopeTest {
         Assertions.assertNotSame(fooFirst, fooThird);
     }
 
+    @Test
+    void testDoubletonScope() {
+
+        Bar barFirst = applicationContext.getBean(Bar.class);
+        Bar barSecond = applicationContext.getBean(Bar.class);
+        Bar barThird = applicationContext.getBean(Bar.class);
+        Bar barForth = applicationContext.getBean(Bar.class);
+
+        Assertions.assertSame(barFirst, barThird);
+        Assertions.assertSame(barSecond, barForth);
+        Assertions.assertNotSame(barFirst, barSecond);
+        Assertions.assertNotSame(barThird, barForth);
+    }
 }
