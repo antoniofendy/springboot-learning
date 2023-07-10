@@ -1,6 +1,6 @@
 package com.fendy.exercise;
 
-import com.fendy.exercise.service.ProducService;
+import com.fendy.exercise.service.ProductService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -19,9 +19,9 @@ public class ComponentTest {
 
     @Test
     void testComponent() {
-        ProducService producService = applicationContext.getBean(ProducService.class);
-        ProducService producService2 = applicationContext.getBean("productService", ProducService.class);
-        Assertions.assertSame(producService, producService2);
+        ProductService productService = applicationContext.getBean(ProductService.class);
+        ProductService productService2 = applicationContext.getBean("productService", ProductService.class);
+        Assertions.assertSame(productService, productService2);
     }
 
 }
