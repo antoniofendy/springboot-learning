@@ -18,9 +18,10 @@ public class ComponentTest {
     }
 
     @Test
-    void componentTest() {
+    void testComponent() {
         ProducService producService = applicationContext.getBean(ProducService.class);
-        Assertions.assertNotNull(producService);
+        ProducService producService2 = applicationContext.getBean("productService", ProducService.class);
+        Assertions.assertSame(producService, producService2);
     }
 
 }
