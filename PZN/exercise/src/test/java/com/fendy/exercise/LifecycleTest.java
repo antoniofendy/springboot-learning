@@ -1,6 +1,7 @@
 package com.fendy.exercise;
 
 import com.fendy.exercise.data.Connection;
+import com.fendy.exercise.data.Server;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -23,8 +24,13 @@ public class LifecycleTest {
     }
 
     @Test
-     void testLifecycle() {
+    void testLifecycle() {
         Connection connection = applicationContext.getBean(Connection.class);
+    }
+
+    @Test
+    void testServer() {
+        Server server = applicationContext.getBean(Server.class);
     }
 
 }
