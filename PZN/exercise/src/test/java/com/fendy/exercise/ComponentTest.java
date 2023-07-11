@@ -52,6 +52,7 @@ public class ComponentTest {
     void testComponentFieldDependencyInjection() {
         CustomerService customerService = applicationContext.getBean(CustomerService.class);
 
+        // we add qualifier to CustomerRepository bean in CustomerConfiguration
         CustomerRepository normalCustomerRepository = applicationContext.getBean("normalCustomerRepository", CustomerRepository.class);
         CustomerRepository premiumCustomerRepository = applicationContext.getBean("premiumCustomerRepository", CustomerRepository.class);
 
