@@ -1,8 +1,10 @@
 package com.fendy.exercise;
 
 import com.fendy.exercise.repository.CategoryRepository;
+import com.fendy.exercise.repository.CustomerRepository;
 import com.fendy.exercise.repository.ProductRepository;
 import com.fendy.exercise.service.CategoryService;
+import com.fendy.exercise.service.CustomerService;
 import com.fendy.exercise.service.ProductService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -43,6 +45,16 @@ public class ComponentTest {
 
         CategoryRepository categoryRepository = applicationContext.getBean(CategoryRepository.class);
         Assertions.assertSame(categoryService.getCategoryRepository(), categoryRepository);
+    }
+
+    // This dependency injection method is not recommended to be used by now
+    @Test
+    void testComponentFieldDependencyInjection() {
+        CustomerService customerService = applicationContext.getBean(CustomerService.class);
+        Assertions.assertNotNull(customerService.getCustomerRepository());
+
+        CustomerRepository customerRepository = applicationContext.getBean(CustomerRepository.class);
+        Assertions.assertSame(customerService.getCustomerRepository(), customerRepository);
     }
 
 }
