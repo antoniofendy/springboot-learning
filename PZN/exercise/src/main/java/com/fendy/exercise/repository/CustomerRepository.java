@@ -2,6 +2,6 @@ package com.fendy.exercise.repository;
 
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class CustomerRepository {
 }
