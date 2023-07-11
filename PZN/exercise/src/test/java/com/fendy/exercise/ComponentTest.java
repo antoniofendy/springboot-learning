@@ -1,5 +1,6 @@
 package com.fendy.exercise;
 
+import com.fendy.exercise.data.MultiFoo;
 import com.fendy.exercise.repository.CategoryRepository;
 import com.fendy.exercise.repository.CustomerRepository;
 import com.fendy.exercise.repository.ProductRepository;
@@ -58,6 +59,15 @@ public class ComponentTest {
 
         Assertions.assertSame(customerService.getNormalCustomerRepository(), normalCustomerRepository);
         Assertions.assertNotSame(normalCustomerRepository, premiumCustomerRepository);
+    }
+
+    @Test
+    void testObjectProvider() {
+        // object provider can be used to get more than one bean collection
+        // it's different to java util optional which only can get 0 or 1 bean existed
+        MultiFoo multiFoo = applicationContext.getBean(MultiFoo.class);
+
+        Assertions.assertEquals(3, multiFoo.getFoos().size());
     }
 
 }
