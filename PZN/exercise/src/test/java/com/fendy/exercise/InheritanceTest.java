@@ -31,7 +31,7 @@ public class InheritanceTest {
         Assertions.assertSame(merchantService, merchantServiceImpl);
 
         // why we are going to face many of this case?
-        // mostly spring programmer using its implementation class rather than its implementation class
+        // mostly spring programmer using its parent class rather than its implementation class
         // we can modify its implementation class without modify its interface class,
         // with this option we can minimize the possibility of error duplication
     }
