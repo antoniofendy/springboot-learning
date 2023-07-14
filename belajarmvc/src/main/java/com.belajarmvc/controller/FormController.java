@@ -23,4 +23,18 @@ public class FormController {
                 "</html>\n").replace("$name", name);
     }
 
+    private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+    @PostMapping(path = "/form/person", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    @ResponseBody
+    public String createPerson(
+            @RequestParam(name = "name") String name,
+            @RequestParam(name = "birthDate") Date birthDate,
+            @RequestParam(name = "address") String address
+    ) {
+        return "Success to create Person with name : " + name +
+               ", birthDate : " + dateFormat.format(birthDate) +
+               ", address : " + address;
+    }
+
 }
