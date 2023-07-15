@@ -1,5 +1,6 @@
-package com.belajarmvc.service;
+package com.fendy.belajarmvc.controller;
 
+import com.fendy.belajarmvc.service.HelloService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

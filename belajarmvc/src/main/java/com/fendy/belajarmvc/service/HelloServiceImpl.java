@@ -1,4 +1,4 @@
-package com.belajarmvc.service;
+package com.fendy.belajarmvc.service;
 
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.belajarmvc.controller;
+package com.fendy.belajarmvc.controller;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

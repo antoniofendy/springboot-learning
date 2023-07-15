@@ -1,4 +1,4 @@
-package com.belajarmvc.controller;
+package com.fendy.belajarmvc.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

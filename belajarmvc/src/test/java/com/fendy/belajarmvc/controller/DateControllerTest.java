@@ -1,4 +1,4 @@
-package com.belajarmvc.controller;
+package com.fendy.belajarmvc.controller;
 
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
@@ -7,8 +7,6 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import static org.springframework.test.web.servlet.MockMvcBuilder.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -16,19 +14,18 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-class HeaderControllerTest {
+public class DateControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
 
     @Test
-    void testRequestHeader() throws Exception {
+    void testDate() throws Exception {
         mockMvc.perform(
-                get("/header/token")
-                    .header("X-TOKEN", "FENDY")
+                get("/date").queryParam("date", "2020-10-10")
         ).andExpectAll(
                 status().isOk(),
-                content().string(Matchers.containsString("OK"))
+                content().string(Matchers.containsString("Date : 20201010"))
         );
     }
 

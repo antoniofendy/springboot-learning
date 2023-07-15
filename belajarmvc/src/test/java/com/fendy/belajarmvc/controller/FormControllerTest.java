@@ -1,4 +1,4 @@
-package com.belajarmvc.controller;
+package com.fendy.belajarmvc.controller;
 
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;

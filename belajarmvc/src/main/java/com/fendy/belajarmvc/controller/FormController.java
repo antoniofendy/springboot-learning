@@ -1,10 +1,13 @@
-package com.belajarmvc.controller;
+package com.fendy.belajarmvc.controller;
 
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Controller
 public class FormController {
@@ -33,8 +36,8 @@ public class FormController {
             @RequestParam(name = "address") String address
     ) {
         return "Success to create Person with name : " + name +
-               ", birthDate : " + dateFormat.format(birthDate) +
-               ", address : " + address;
+                ", birthDate : " + dateFormat.format(birthDate) +
+                ", address : " + address;
     }
 
 }

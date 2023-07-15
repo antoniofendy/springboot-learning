@@ -1,10 +1,10 @@
-package com.belajarmvc;
+package com.fendy.belajarmvc;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ApplicationTests {
+class BelajarmvcApplicationTests {
 
 	@Test
 	void contextLoads() {

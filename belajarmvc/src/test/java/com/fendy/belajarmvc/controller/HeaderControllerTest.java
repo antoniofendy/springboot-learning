@@ -1,4 +1,4 @@
-package com.belajarmvc.controller;
+package com.fendy.belajarmvc.controller;
 
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
@@ -16,18 +16,19 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-class OrderControllerTest {
+class HeaderControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
 
     @Test
-    void testPathVariable() throws Exception{
+    void testRequestHeader() throws Exception {
         mockMvc.perform(
-                get("/orders/1/products/2")
+                get("/header/token")
+                    .header("X-TOKEN", "FENDY")
         ).andExpectAll(
                 status().isOk(),
-                content().string(Matchers.containsString("Order : 1, Product : 2"))
+                content().string(Matchers.containsString("OK"))
         );
     }
 
